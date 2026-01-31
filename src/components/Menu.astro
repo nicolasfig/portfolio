@@ -1,7 +1,7 @@
 ---
 import Header from "./Header.astro"
 ---
-<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
 <nav class="relative bg-forest-100 font-poppins">
   <div class="max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 items-center justify-between">
@@ -22,10 +22,10 @@ import Header from "./Header.astro"
         
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="/" aria-current="page" class="rounded-md bg-forest-400 px-3 py-2 text-sm font-medium text-forest-100">Home</a>
-            <a href="/projects" class="rounded-md px-3 py-2 text-sm font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">Projects</a>
-            <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">About</a>
-            <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">Contact</a>
+            <a href="/" class="nav-item rounded-md ">Home</a>
+            <a href="/projects" class="nav-item rounded-md ">Projects</a>
+            <a href="/about" class="nav-item rounded-md ">About</a>
+            <a href="/contact" class="nav-item rounded-md ">Contact</a>
           </div>
         </div>
         <Header/>
@@ -33,12 +33,28 @@ import Header from "./Header.astro"
     </div>
   </div>
 
+  <!-- mobile menu -->
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
-    <div class="space-y-1 px-2 pt-2 pb-3">
-      <a href="/" aria-current="page" class="block rounded-md bg-forest-400 px-3 py-2 text-base font-medium text-forest-100 ">Home</a>
-      <a href="/projects" class="block rounded-md px-3 py-2 text-base font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">Projects</a>
-      <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">About</a>
-      <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-forest-300 hover:bg-forest-200 hover:text-forest-100">Contact</a>
+    <div class="fixed space-y-1 px-2 pt-2 pb-3 w-full text-center bg-forest-100/80 backdrop-blur-[2px]">
+      <a href="/" class=" nav-item block">Home</a>
+      <a href="/projects" class=" nav-item block">Projects</a>
+      <a href="/about" class=" nav-item block">About</a>
+      <a href="/contact" class=" nav-item block">Contact</a>
     </div>
   </el-disclosure>
 </nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+<script>
+    const nav = document.querySelector('nav');
+    if (nav) {
+        const navLinks = nav.querySelectorAll('.nav-item');
+        const currentURL = window.location.href;
+        navLinks.forEach(link => {
+            const anchorLink = link as HTMLAnchorElement;
+            if(anchorLink.href === currentURL) {
+                link.classList.add('active')
+            }
+        })
+    }
+</script>

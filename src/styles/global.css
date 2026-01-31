@@ -13,3 +13,12 @@
   --font-figtree: "Figtree Variable", sans-serif;
   --font-baloo: "Baloo 2 Variable";
 }
+
+@layer {
+  .active {
+    @apply bg-forest-400/80 text-forest-100 backdrop-blur-[2px];
+  }
+  .nav-item {
+    @apply rounded-md px-3 py-2 text-base font-medium transition-colors duration-300 ease-in-out hover:bg-forest-200 hover:text-forest-100;
+  }
+}
