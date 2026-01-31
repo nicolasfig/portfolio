@@ -1,5 +1,15 @@
 @import "tailwindcss";
+@import "@fontsource/poppins";
+@import "@fontsource-variable/figtree";
+@import "@fontsource-variable/baloo-2";
 
 @theme {
   --color-blues: #adc4ce;
+  --color-forest-100: #cfffdc;
+  --color-forest-200: #68ba7f;
+  --color-forest-300: #2e6f40;
+  --color-forest-400: #253d2c;
+  --font-poppins: "Poppins", sans-serif;
+  --font-figtree: "Figtree Variable", sans-serif;
+  --font-baloo: "Baloo 2 Variable";
 }
