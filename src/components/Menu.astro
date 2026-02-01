@@ -46,6 +46,21 @@ import Header from "./Header.astro"
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
 <script>
+    document.addEventListener('astro:page-load', () => {
+        const nav = document.querySelector('nav');
+        if (nav) {
+            const navLinks = nav.querySelectorAll('.nav-item');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === window.location.pathname) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            })
+        }
+    })
+</script>
+<!-- <script>
     const nav = document.querySelector('nav');
     if (nav) {
         const navLinks = nav.querySelectorAll('.nav-item');
@@ -53,8 +68,9 @@ import Header from "./Header.astro"
         navLinks.forEach(link => {
             const anchorLink = link as HTMLAnchorElement;
             if(anchorLink.href === currentURL) {
+                console.log(anchorLink.href)
                 link.classList.add('active')
             }
         })
     }
-</script>
+</script> -->
