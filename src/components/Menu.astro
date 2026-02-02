@@ -45,7 +45,7 @@ import Header from "./Header.astro"
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-<script>
+<script is:inline>
     document.addEventListener('astro:page-load', () => {
         const nav = document.querySelector('nav');
         if (nav) {
