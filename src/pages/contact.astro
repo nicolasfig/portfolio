@@ -10,16 +10,16 @@ import jaguar from '../assets/jaguar.png';
             <div class="flex flex-col justify-evenly gap-4 sm:flex-row">
                 <div class="flex justify-evenly items-center sm:justify-evenly gap-2 w-full">
                     <label for="name" class="flex items-center gap-2 text-forest-100 text-2xl sm:w-[10ch]"><span class="font-icon">person</span>Name</label>
-                    <input type="text" name="name" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none focus:shadow-md focus:shadow-forest-300/50">
+                    <input type="text" name="name" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none transition-shadow duration-300 ease-in-out focus:shadow-md focus:shadow-forest-300/50">
                 </div>
                 <div class="flex justify-evenly items-center sm:justify-evenly gap-2 w-full">
                     <label for="email" class="flex items-center  gap-2 text-forest-100 text-2xl sm:w-[10ch]"><span class="font-icon">mail</span>email</label>
-                    <input type="email" name="email" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none focus:shadow-md focus:shadow-forest-300/50">
+                    <input type="email" name="email" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none transition-shadow duration-300 ease-in-out focus:shadow-md focus:shadow-forest-300/50">
                 </div>
             </div>
-            <div class="flex flex-col justify-evenly gap-2">
-                <label for="message" class="text-forest-100 text-2xl">Message</label>
-                <textarea name="message" id="message" rows="4" cols="30" class="rounded p-4 text-forest-400 bg-forest-100 focus:outline-none focus:shadow-md focus:shadow-forest-300/50"></textarea>
+            <div class="flex flex-col justify-evenly gap-2 mt-4">
+                <label for="message" class="flex items-center justify-center gap-2 text-forest-100 text-2xl"> <span class="font-icon">edit_note</span> Message</label>
+                <textarea name="message" id="message" rows="4" cols="30" class="rounded p-4 text-forest-400 bg-forest-100 focus:outline-none transition-shadow duration-300 ease-in-out focus:shadow-md focus:shadow-forest-300/50"></textarea>
             </div>
             <div>
                 <button class="bg-forest-300 text-forest-100 rounded w-full py-2 px-6 transition-colors duration-300 ease-in-out hover:bg-forest-400/75 hover:cursor-pointer">Send</button>
