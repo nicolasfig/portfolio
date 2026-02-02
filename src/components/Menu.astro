@@ -1,5 +1,14 @@
 ---
 import Header from "./Header.astro"
+
+const {pathname} = Astro.url;
+
+const navItems = [
+    {name: 'Home', href: '/'},
+    {name: 'Projects', href: '/projects'},
+    {name: 'About', href: '/about'},
+    {name: 'Contact', href: '/contact'},
+]
 ---
 
 <nav class="relative bg-forest-100 font-poppins">
@@ -22,10 +31,16 @@ import Header from "./Header.astro"
         
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
-            <a href="/" class="nav-item rounded-md ">Home</a>
-            <a href="/projects" class="nav-item rounded-md ">Projects</a>
-            <a href="/about" class="nav-item rounded-md ">About</a>
-            <a href="/contact" class="nav-item rounded-md ">Contact</a>
+            {navItems.map((item) => (
+                <a href={item.href} 
+                class:list={['nav-item rounded-md', // Base class
+                { 'active': item.href === pathname || (item.href !== '/' && pathname.startsWith(item.href)) } // Dynamic active class
+                ]}
+                aria-current={item.href === pathname ? 'page' : false}
+                >
+                {item.name}
+                </a>
+            ))}
           </div>
         </div>
         <Header/>
@@ -36,28 +51,18 @@ import Header from "./Header.astro"
   <!-- mobile menu -->
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
     <div class="fixed z-20 space-y-1 px-2 pt-2 pb-3 w-full text-center bg-forest-100/80 backdrop-blur-[2px]">
-      <a href="/" class=" nav-item block">Home</a>
-      <a href="/projects" class=" nav-item block">Projects</a>
-      <a href="/about" class=" nav-item block">About</a>
-      <a href="/contact" class=" nav-item block">Contact</a>
+      {navItems.map((item) => (
+                <a href={item.href} 
+                class:list={['nav-item block rounded-md', // Base class
+                { 'active': item.href === pathname || (item.href !== '/' && pathname.startsWith(item.href)) } // Dynamic active class
+                ]}
+                aria-current={item.href === pathname ? 'page' : false}
+                >
+                {item.name}
+                </a>
+            ))}
     </div>
   </el-disclosure>
 </nav>
 
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-<script is:inline>
-    document.addEventListener('astro:page-load', () => {
-        const nav = document.querySelector('nav');
-        if (nav) {
-            const navLinks = nav.querySelectorAll('.nav-item');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === window.location.pathname) {
-                console.log(link.getAttribute('href'))
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            })
-        }
-    })
-</script>
