@@ -3,6 +3,7 @@
 @import "@fontsource/poppins";
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/baloo-2";
+@import "@fontsource/material-icons";
 
 @theme {
   --color-blues: #adc4ce;
@@ -13,6 +14,7 @@
   --font-poppins: "Poppins", sans-serif;
   --font-figtree: "Figtree Variable", sans-serif;
   --font-baloo: "Baloo 2 Variable";
+  --font-icon: "Material Icons", sans-serif;
 }
 
 @layer {
