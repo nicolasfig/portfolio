@@ -1,7 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Menu from "../components/Menu.astro"
+import { Image } from "astro:assets";
+import jaguar from '../assets/jaguar.png';
 ---
 <Layout title="Contact">
-    <h1>contact</h1>
+    <section class=" relative flex flex-col items-center justify-center p-4 w-full sm:w-full h-full gap-4">
+        <Image src={jaguar} alt="Vector illustration of a jaguar" class:list={'rounded-md sm:hidden'}/>
+        <form action="POST" class="flex flex-col gap-4 p-6 bg-forest-200 rounded-2xl [&>div>input]:bg-white/80 sm:w-3/4">
+            <div class="flex flex-col justify-evenly gap-4 sm:flex-row">
+                <div class="flex justify-evenly items-center sm:justify-evenly gap-2 w-full">
+                    <label for="name" class="text-forest-100 text-2xl w-[6ch]">Name</label>
+                    <input type="text" name="name" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none focus:shadow-md focus:shadow-forest-300/50">
+                </div>
+                <div class="flex justify-evenly items-center sm:justify-evenly gap-2 w-full">
+                    <label for="email" class="text-forest-100 text-2xl w-[6ch]">email</label>
+                    <input type="email" name="email" class="py-1 px-2 text-forest-400 bg-forest-100 rounded-xs sm:w-full focus:outline-none focus:shadow-md focus:shadow-forest-300/50">
+                </div>
+            </div>
+            <div class="flex flex-col justify-evenly gap-2">
+                <label for="message" class="text-forest-100 text-2xl">Message</label>
+                <textarea name="message" id="message" rows="4" cols="30" class="rounded p-4 text-forest-400 bg-forest-100 focus:outline-none focus:shadow-md focus:shadow-forest-300/50"></textarea>
+            </div>
+            <div>
+                <button class="bg-forest-300 text-forest-100 rounded w-full py-2 px-6 transition-colors duration-300 ease-in-out hover:bg-forest-400/75 hover:cursor-pointer">Send</button>
+            </div>
+        </form>
+    </section>
 </Layout>
