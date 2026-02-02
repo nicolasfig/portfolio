@@ -52,7 +52,7 @@ import Header from "./Header.astro"
             const navLinks = nav.querySelectorAll('.nav-item');
             navLinks.forEach(link => {
                 if (link.getAttribute('href') === window.location.pathname) {
-                console.log(link)
+                console.log(link.getAttribute('href'))
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
