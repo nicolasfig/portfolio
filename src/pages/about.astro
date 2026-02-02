@@ -1,9 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Menu from "../components/Menu.astro"
+import { Image } from "astro:assets";
+import developerImg from '../assets/desktop.png'
 ---
 <Layout title="About">
-    <section >
-        <h2>I’m a web developer with a passion for building clean, functional websites that solve real problems. I enjoy working with small businesses and teams that value thoughtful design, solid development, and long-term results.</h2>
+    <section class="mt-4 flex flex-col items-center sm:flex-row sm:items-start gap-6 2xl:gap-8 p-10 w-full sm:w-auto h-full">
+        <div class="flex items-center h-full">
+            <Image src={developerImg}  alt="A person coding at a 2 monitor setup with a window view of nature in the background" class="rounded sm:rounded-2xl"/>
+        </div>
+        <div class="flex flex-col justify-center gap-8 items-center h-full sm:w-1/2">
+            <h2 class="text-forest-400 text-3xl 2xl:text-5xl">Hi I'm <span class="font-semibold">Nicolás</span> a web developer with a passion for building clean, functional websites that solve real problems.</h2>
+            <h3 class="text-forest-300 text-2xl 2xl:text-4xl">I enjoy working with small businesses and teams that value thoughtful design, solid development, and long-term results.</h3>
+        </div>
     </section>
 </Layout>
