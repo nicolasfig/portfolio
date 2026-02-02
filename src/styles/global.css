@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 @import "@fontsource/poppins";
 @import "@fontsource-variable/figtree";
 @import "@fontsource-variable/baloo-2";
