@@ -4,34 +4,38 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 const projects = [
     {
-        title: 'test',
-        img: 'https://placehold.co/600x400',
-        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+        title: 'Faq accordion component',
+        path: '../assets/screenshots/faq.png',
+        alt: 'An isometric illustration of a woman standing in front of a computer monitor next to an FAQ list with expandable question tabs.',
+        url: 'https://nicolasfig.github.io/faq-accordion-card/',
+        description: `This project required precise CSS positioning to allow the artwork (the box and the character) to overlap the card's boundary while remaining responsive across different viewport sizes`
     },
     {
         title: 'test',
-        img: 'https://placehold.co/600x400',
-        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+        path: '../assets/screenshots/four.png',
+        alt: 'A web layout featuring a central header above four color-coded cards',
+        url: 'https://nicolasfig.github.io/four-card-feature-section-master/',
+        description: 'This project involves building a responsive feature display area that transitions from a single-column mobile view to a complex, staggered multi-column layout on desktop.'
     },
     {
         title: 'test',
-        img: 'https://placehold.co/600x400',
-        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+        path: '../assets/screenshots/intro.png',
+        alt: 'A landing page section with a bold headline and text on a red patterned background',
+        url: 'https://nicolasfig.github.io/intro-component-with-signup-form/',
+        description: 'This project involves creating a landing page component featuring a subscription form. The primary goal was to implement robust client-side validation while maintaining a responsive two-column layout that adapts to mobile devices.'
     },
     {
-        title: 'test',
-        img: 'https://placehold.co/600x400',
-        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
-    }
+        title: 'Social proof section',
+        path: '../assets/screenshots/social.png',
+        alt: 'A testimonial section with a large headline, three staggered star-rating bars',
+        url: 'https://nicolasfig.github.io/social-proof-section/',
+        description: 'This project involved building a modern social proof section designed to build brand trust through testimonials and star ratings. The core challenge was implementing the unique "staircase" alignment for both the rating bars and the testimonial cards.'
+    },
 ]
 
 ---
 <Layout title="Projects">
     <section class="flex flex-col md:grid md:grid-cols-2 gap-6 w-full h-auto py-6 px-8">
-        {projects.map(project => <ProjectCard data={project}/>)}
+        {projects.map(project => <ProjectCard title={project.title} path={project.path} alt={project.alt} url={project.url} description={project.description} />)}
     </section>
 </Layout>
