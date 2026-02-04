@@ -1,7 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Menu from "../components/Menu.astro"
+import ProjectCard from "../components/ProjectCard.astro";
+
+const projects = [
+    {
+        title: 'test',
+        img: 'https://placehold.co/600x400',
+        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+    },
+    {
+        title: 'test',
+        img: 'https://placehold.co/600x400',
+        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+    },
+    {
+        title: 'test',
+        img: 'https://placehold.co/600x400',
+        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+    },
+    {
+        title: 'test',
+        img: 'https://placehold.co/600x400',
+        link: 'https://nicolasfig.github.io/four-card-feature-section-master/',
+        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo aliquam obcaecati eveniet sit, tenetur optio architecto excepturi nam possimus perferendis!'
+    }
+]
+
 ---
 <Layout title="Projects">
-    <h1>Projects</h1>
+    <section class="flex flex-col md:grid md:grid-cols-2 gap-6 w-full h-auto py-6 px-8">
+        {projects.map(project => <ProjectCard data={project}/>)}
+    </section>
 </Layout>

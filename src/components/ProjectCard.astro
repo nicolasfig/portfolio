@@ -1,3 +1,15 @@
-<div>
-    
+---
+const {data} = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center w-full p-4 shadow-xl shadow-forest-200/20">
+    <div>
+        <h3 class="text-2xl text-forest-400/80 font-semibold uppercase mb-2">{data.title}</h3>
+        <a href={data.link}>
+            <img src={data.img} alt={data.title}>
+        </a>
+    </div>
+    <div class="flex items-center p-4 w-full bg-forest-200/75 rounded-b-md">
+        <p class="text-forest-400 prose">{data.description}</p>
+    </div>
 </div>
